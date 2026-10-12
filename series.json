@@ -1,0 +1,14 @@
+[
+  {"id":"repo_on","label":"Overnight repo rate (WA)","key":"TS_GP_IR_REPOMR_D.ORR","unit":"%","decimals":2},
+  {"id":"cpi","label":"CPI","key":"TS_GP_PT_CPI_M.P00011516","unit":"index","decimals":2},
+  {"id":"lsm","label":"Large-scale manufacturing","key":"TS_GP_RL_LSM1516_M.LSM000160000","unit":"index","decimals":1},
+  {"id":"remit","label":"Workers' remittances","key":"TS_GP_BOP_BPM6SUM_M.P00190","unit":"Mn USD","decimals":0},
+  {"id":"serv_exp","label":"Exports of services","key":"TS_GP_BOP_BPM6SUM_M.P00060","unit":"Mn USD","decimals":0},
+
+  {"id":"policy","label":"SBP policy rate","key":"","unit":"%","decimals":2},
+  {"id":"usd_pkr","label":"PKR / USD","key":"","unit":"PKR","decimals":2},
+  {"id":"reserves","label":"SBP FX reserves","key":"","unit":"Mn USD","decimals":0},
+  {"id":"tbill","label":"6M T-bill yield","key":"","unit":"%","decimals":2},
+  {"id":"m2","label":"Broad money (M2)","key":"","unit":"Mn PKR","decimals":0},
+  {"id":"trade","label":"Trade balance","key":"","unit":"Mn USD","decimals":0}
+]
