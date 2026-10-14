@@ -12,12 +12,17 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: python fetch_data.py
+      - name: Public data snapshot (World Bank, IMF, FX)
+        run: python collector/collect.py
+        continue-on-error: true   # the page fetches these live anyway; this is only the fallback copy
+      - name: SBP EasyData series
+        run: python fetch_data.py
+        continue-on-error: true   # needs the EASYDATA_API_KEY secret
         env:
           EASYDATA_API_KEY: ${{ secrets.EASYDATA_API_KEY }}
       - name: Commit if data changed
         run: |
           git config user.name "data-bot"
           git config user.email "data-bot@users.noreply.github.com"
-          git add docs/data.json
+          git add docs/data.json docs/sbp.json 2>/dev/null || git add docs/data.json
           git diff --staged --quiet || (git commit -m "Update data" && git push)
