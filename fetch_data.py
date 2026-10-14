@@ -1,11 +1,11 @@
-"""Pull series from SBP EasyData and write docs/data.json.
+"""Pull series from SBP EasyData and write docs/sbp.json (shown in the dashboard's SBP section).
 Series with an empty "key" in series.json are skipped.
 Needs env var EASYDATA_API_KEY."""
 import csv, io, json, os, sys, urllib.request, urllib.error
 from datetime import date, datetime, timedelta
 
 API = "https://easydata.sbp.org.pk/api/v1/series/{key}/data?api_key={api}&start_date={s}&end_date={e}&format=csv"
-OUT = os.path.join("docs", "data.json")
+OUT = os.path.join("docs", "sbp.json")
 KEEP = 120  # points kept per series
 FORMATS = ["%Y-%m-%d", "%d-%b-%y", "%d-%b-%Y", "%b-%y", "%b-%Y", "%Y-%m", "%d/%m/%Y"]
 
