@@ -48,3 +48,7 @@ shows in an "SBP high-frequency series" section.
 2. Series with an empty `"key"` in `series.json` are skipped — fill in the EasyData code to enable one.
 
 Never commit the key.
+
+## Mobile app
+
+`mobile/` holds an Android app (Expo / React Native) with a watchlist, indicator detail, compare, release calendar, news and a currency converter. Its figures are a snapshot from 16 Oct 2026. See [`mobile/README.md`](mobile/README.md).

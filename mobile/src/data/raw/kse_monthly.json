@@ -1,0 +1,47 @@
+[
+{
+"date": "2025-09-30",
+"close": 165494,
+"note": ""
+},
+{
+"date": "2026-03-31",
+"close": 148744,
+"note": "derived from reported quarterly change"
+},
+{
+"date": "2026-04-30",
+"close": 162994,
+"note": ""
+},
+{
+"date": "2026-05-29",
+"close": 173963,
+"note": ""
+},
+{
+"date": "2026-06-30",
+"close": 180302,
+"note": ""
+},
+{
+"date": "2026-07-31",
+"close": 176094,
+"note": "derived from reported monthly change"
+},
+{
+"date": "2026-08-29",
+"close": 176976,
+"note": ""
+},
+{
+"date": "2026-09-30",
+"close": 169969,
+"note": ""
+},
+{
+"date": "2026-10-15",
+"close": 166189,
+"note": "latest close"
+}
+]

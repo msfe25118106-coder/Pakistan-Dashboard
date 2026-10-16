@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet"><style>body{margin:0;background:#ebe8e1;font-family:'IBM Plex Sans',system-ui,sans-serif}a{color:#1f6b4f}a:hover{color:#123f2e}input:focus{outline:none}*::-webkit-scrollbar{display:none}.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}.dv-opts{display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 12px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.6)}.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}.dv-next{margin:28px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}</style></helmet>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Three visual directions · Android · for policy makers and journalists</span></div>
+<p style="margin:-8px 0 28px;max-width:760px;font:400 13px/1.55 system-ui,sans-serif;color:rgba(0,0,0,.6);text-wrap:pretty">Each direction covers the same app with different screens so all six requested screens appear once: watchlist and alerts, indicator detail, compare, release calendar, converter, news and SBP announcements. Figures are as reported up to 15 Oct 2026 (SBP, PBS, PSX, OGRA, Sarafa). Monthly chart points between headline releases are approximations. Stars, ranges, chips, alerts, filters and the converter are interactive.</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Ledger: editorial paper, serif headlines, semantic green/rust</div>
+<div style="display:flex;gap:28px;flex-wrap:wrap">
+
+<div style="width:360px;height:780px;border-radius:38px;background:#121211;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(40,30,10,.14)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#f6f4ef;display:flex;flex-direction:column;position:relative;color:#1c1b18">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'IBM Plex Sans',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#121211"></span><span style="font:500 11px 'IBM Plex Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:8px 18px 16px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #1c1b18;padding-bottom:8px">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#6b675e">THU 15 OCT 2026</span><span style="font:500 30px/1 'Newsreader',serif;letter-spacing:-.01em">Watchlist</span></div>
+<span style="font:500 11px 'IBM Plex Mono',monospace;color:#6b675e">{{ aAlertCount }} alerts on</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;padding:2px 0 4px">
+<span style="font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#1f6b4f">REAL POLICY RATE</span>
+<span style="font:400 21px/1.25 'Newsreader',serif;text-wrap:pretty">Policy rate 11.50% sits 1.2 points above September CPI of 10.3%.</span>
+</div>
+<div style="display:flex;background:#ebe7de;border-radius:10px;padding:3px;gap:3px">
+<sc-for list="{{ aTabs }}" as="t" hint-placeholder-count="2"><button onClick="{{ t.onClick }}" style="flex:1;height:34px;border:none;border-radius:8px;background:{{ t.bg }};color:#1c1b18;font:500 13px 'IBM Plex Sans',sans-serif;cursor:pointer;box-shadow:{{ t.shadow }}">{{ t.label }}</button></sc-for>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ aRows }}" as="r" hint-placeholder-count="8">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 54px 84px 28px;align-items:center;gap:8px;padding:11px 0;border-bottom:1px solid #e3dfd5">
+<div style="display:flex;flex-direction:column;gap:1px;min-width:0"><span style="font:600 14px 'IBM Plex Sans',sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.name }}</span><span style="font:400 11px 'IBM Plex Sans',sans-serif;color:#6b675e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.per }}</span></div>
+<svg width="54" height="20" style="display:block;overflow:visible"><path d="{{ r.spark54 }}" fill="none" stroke="{{ r.colA }}" style="stroke-width:1.4;stroke-linejoin:round"></path></svg>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:1px"><span style="font:500 13px 'IBM Plex Mono',monospace;white-space:nowrap">{{ r.val }}</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:{{ r.colA }};white-space:nowrap">{{ r.chg }}</span></div>
+<button onClick="{{ r.onStar }}" style="width:28px;height:44px;border:none;background:none;padding:0;font:400 17px sans-serif;color:{{ r.starColA }};cursor:pointer">{{ r.star }}</button>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="height:62px;flex:none;border-top:1px solid #e3dfd5;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;background:#f6f4ef">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:52px;height:6px;border-radius:3px;background:#1c1b18"></span><span style="font:600 11px 'IBM Plex Sans',sans-serif">Watchlist</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#6b675e"><span style="width:6px;height:6px;border-radius:3px;background:#c9c3b6"></span><span style="font:500 11px 'IBM Plex Sans',sans-serif">Compare</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#6b675e"><span style="width:6px;height:6px;border-radius:3px;background:#c9c3b6"></span><span style="font:500 11px 'IBM Plex Sans',sans-serif">Calendar</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#6b675e"><span style="width:6px;height:6px;border-radius:3px;background:#c9c3b6"></span><span style="font:500 11px 'IBM Plex Sans',sans-serif">News</span></div>
+</div>
+<div style="height:16px;flex:none;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#1c1b18;opacity:.3"></span></div>
+</div>
+</div>
+
+<div style="width:360px;height:780px;border-radius:38px;background:#121211;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(40,30,10,.14)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#f6f4ef;display:flex;flex-direction:column;color:#1c1b18">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'IBM Plex Sans',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#121211"></span><span style="font:500 11px 'IBM Plex Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:4px 18px 20px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;height:44px"><span style="font:400 22px 'IBM Plex Sans',sans-serif">←</span><span style="font:500 11px 'IBM Plex Mono',monospace;color:#6b675e">PBS · MONTHLY</span><span style="font:400 18px sans-serif;color:#1f6b4f">★</span></div>
+<div style="display:flex;flex-direction:column;gap:2px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:500 26px 'Newsreader',serif">CPI inflation</span><sc-if value="{{ showUrdu }}" hint-placeholder-val="{{ true }}"><span style="font:400 13px/2 'Noto Nastaliq Urdu',serif;color:#6b675e">افراطِ زر</span></sc-if></div>
+<div style="display:flex;align-items:baseline;gap:10px"><span style="font:400 58px/1 'Newsreader',serif;letter-spacing:-.02em">10.3%</span><span style="font:500 13px 'IBM Plex Mono',monospace;color:#1f6b4f">−0.8 pp vs Aug · +1.3% m/m</span></div>
+<span style="font:400 12px 'IBM Plex Sans',sans-serif;color:#6b675e">September 2026, year on year · released 1 Oct</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<svg width="324" height="160" style="display:block;overflow:visible">
+<rect x="0" y="67" width="324" height="26" fill="#1f6b4f" style="opacity:.09"></rect>
+<line x1="0" x2="324" y1="4" y2="4" stroke="#e3dfd5"></line><line x1="0" x2="324" y1="80" y2="80" stroke="#e3dfd5"></line><line x1="0" x2="324" y1="156" y2="156" stroke="#c9c3b6"></line>
+<text x="4" y="62" style="font:500 9px 'IBM Plex Mono',monospace;fill:#1f6b4f">SBP TARGET 5–7%</text>
+<text x="324" y="14" text-anchor="end" style="font:400 9px 'IBM Plex Mono',monospace;fill:#8a857a">12%</text>
+<text x="324" y="76" text-anchor="end" style="font:400 9px 'IBM Plex Mono',monospace;fill:#8a857a">6%</text>
+<path d="{{ aLine }}" fill="none" stroke="#1c1b18" style="stroke-width:2;stroke-linejoin:round;stroke-linecap:round"></path>
+<circle cx="324" cy="{{ aLastY }}" r="4" fill="#1c1b18"></circle>
+</svg>
+<div style="display:flex;justify-content:space-between;font:400 10px 'IBM Plex Mono',monospace;color:#8a857a"><span>{{ aX0 }}</span><span>Sep 26</span></div>
+<div style="display:flex;gap:6px">
+<sc-for list="{{ aRangeTabs }}" as="t" hint-placeholder-count="3"><button onClick="{{ t.onClick }}" style="flex:1;height:34px;border:1px solid {{ t.border }};border-radius:8px;background:{{ t.bg }};color:{{ t.color }};font:500 12px 'IBM Plex Mono',monospace;cursor:pointer">{{ t.label }}</button></sc-for>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#6b675e;border-top:2px solid #1c1b18;padding-top:8px">WHAT MOVED · YOY BY GROUP</span>
+<sc-for list="{{ cpiGroups }}" as="g" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:110px minmax(0,1fr) 44px;align-items:center;gap:8px">
+<span style="font:400 12px 'IBM Plex Sans',sans-serif">{{ g.name }}</span>
+<div style="height:8px;background:#ebe7de;border-radius:2px;overflow:hidden"><div style="height:100%;width:{{ g.w }};background:{{ g.color }}"></div></div>
+<span style="font:500 12px 'IBM Plex Mono',monospace;text-align:right">{{ g.v }}</span>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;background:#ebe7de;border-radius:12px;padding:10px 12px">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:600 13px 'IBM Plex Sans',sans-serif">Alert when CPI crosses</span><span style="font:400 11px 'IBM Plex Sans',sans-serif;color:#6b675e">{{ aAlertText }}</span></div>
+<div style="display:flex;align-items:center;gap:4px">
+<button onClick="{{ thrDown }}" style="width:32px;height:32px;border:1px solid #c9c3b6;border-radius:8px;background:#f6f4ef;font:500 15px 'IBM Plex Mono',monospace;cursor:pointer;color:#1c1b18">−</button>
+<span style="width:46px;text-align:center;font:500 14px 'IBM Plex Mono',monospace">{{ thrText }}</span>
+<button onClick="{{ thrUp }}" style="width:32px;height:32px;border:1px solid #c9c3b6;border-radius:8px;background:#f6f4ef;font:500 15px 'IBM Plex Mono',monospace;cursor:pointer;color:#1c1b18">+</button>
+<button onClick="{{ toggleAAlert }}" style="width:40px;height:24px;border:none;border-radius:12px;background:{{ aSwBg }};position:relative;cursor:pointer;margin-left:4px"><span style="position:absolute;top:3px;left:{{ aSwX }};width:18px;height:18px;border-radius:9px;background:#fff"></span></button>
+</div>
+</div>
+</div>
+<div style="height:16px;flex:none;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#1c1b18;opacity:.3"></span></div>
+</div>
+</div>
+
+<div style="width:360px;height:780px;border-radius:38px;background:#121211;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(40,30,10,.14)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#f6f4ef;display:flex;flex-direction:column;color:#1c1b18">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'IBM Plex Sans',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#121211"></span><span style="font:500 11px 'IBM Plex Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:8px 18px 16px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;flex-direction:column;gap:2px;border-bottom:2px solid #1c1b18;padding-bottom:8px"><span style="font:500 10px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#6b675e">INDEXED · OCT 2025 = 100</span><span style="font:500 30px/1 'Newsreader',serif">Compare</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<sc-for list="{{ cmpChips }}" as="c" hint-placeholder-count="6"><button onClick="{{ c.onClick }}" style="height:32px;padding:0 12px;border-radius:16px;border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};font:500 12px 'IBM Plex Sans',sans-serif;cursor:pointer;display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:4px;background:{{ c.dot }}"></span>{{ c.name }}</button></sc-for>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<svg width="324" height="200" style="display:block;overflow:visible">
+<line x1="0" x2="324" y1="{{ cmpBaseY }}" y2="{{ cmpBaseY }}" stroke="#1c1b18" style="stroke-dasharray:3 3;opacity:.35"></line>
+<line x1="0" x2="324" y1="196" y2="196" stroke="#c9c3b6"></line>
+<path d="{{ cmp0 }}" fill="none" stroke="#a5432f" style="stroke-width:2;stroke-linejoin:round;opacity:{{ cmpO0 }}"></path>
+<path d="{{ cmp1 }}" fill="none" stroke="#1f6b4f" style="stroke-width:2;stroke-linejoin:round;opacity:{{ cmpO1 }}"></path>
+<path d="{{ cmp2 }}" fill="none" stroke="#a07a1f" style="stroke-width:2;stroke-linejoin:round;opacity:{{ cmpO2 }}"></path>
+<path d="{{ cmp3 }}" fill="none" stroke="#2f5d8a" style="stroke-width:2;stroke-linejoin:round;opacity:{{ cmpO3 }}"></path>
+<path d="{{ cmp4 }}" fill="none" stroke="#6d4a7a" style="stroke-width:2;stroke-linejoin:round;opacity:{{ cmpO4 }}"></path>
+<path d="{{ cmp5 }}" fill="none" stroke="#1c1b18" style="stroke-width:2;stroke-linejoin:round;opacity:{{ cmpO5 }}"></path>
+<text x="324" y="{{ cmpBaseLabelY }}" text-anchor="end" style="font:400 9px 'IBM Plex Mono',monospace;fill:#8a857a">100</text>
+</svg>
+<div style="display:flex;justify-content:space-between;font:400 10px 'IBM Plex Mono',monospace;color:#8a857a"><span>Oct 25</span><span>Sep 26</span></div>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ cmpLegend }}" as="l" hint-placeholder-count="3">
+<div style="display:grid;grid-template-columns:14px minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #e3dfd5">
+<span style="width:10px;height:10px;border-radius:5px;background:{{ l.dot }}"></span>
+<span style="font:500 13px 'IBM Plex Sans',sans-serif">{{ l.name }}</span>
+<span style="font:500 13px 'IBM Plex Mono',monospace">{{ l.idx }}</span>
+<span style="font:500 12px 'IBM Plex Mono',monospace;color:#6b675e;width:56px;text-align:right">{{ l.pct }}</span>
+</div>
+</sc-for>
+</div>
+<p style="margin:0;font:400 15px/1.4 'Newsreader',serif;color:#44413a;text-wrap:pretty">{{ cmpNote }}</p>
+</div>
+<div style="height:62px;flex:none;border-top:1px solid #e3dfd5;display:grid;grid-template-columns:repeat(4,1fr);align-items:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#6b675e"><span style="width:6px;height:6px;border-radius:3px;background:#c9c3b6"></span><span style="font:500 11px 'IBM Plex Sans',sans-serif">Watchlist</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:52px;height:6px;border-radius:3px;background:#1c1b18"></span><span style="font:600 11px 'IBM Plex Sans',sans-serif">Compare</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#6b675e"><span style="width:6px;height:6px;border-radius:3px;background:#c9c3b6"></span><span style="font:500 11px 'IBM Plex Sans',sans-serif">Calendar</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#6b675e"><span style="width:6px;height:6px;border-radius:3px;background:#c9c3b6"></span><span style="font:500 11px 'IBM Plex Sans',sans-serif">News</span></div>
+</div>
+<div style="height:16px;flex:none;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#1c1b18;opacity:.3"></span></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Terminal: dark, dense, monospace data, amber alerts</div>
+<div style="display:flex;gap:28px;flex-wrap:wrap">
+
+<div style="width:360px;height:780px;border-radius:38px;background:#000;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(0,0,0,.25)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#111312;display:flex;flex-direction:column;color:#e6e9e6">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'Space Grotesk',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#000"></span><span style="font:500 11px 'JetBrains Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;display:flex;flex-direction:column">
+<div style="padding:8px 16px 12px;display:flex;justify-content:space-between;align-items:center"><span style="font:700 15px 'JetBrains Mono',monospace;letter-spacing:.04em">PK·MACRO</span><span style="font:400 11px 'JetBrains Mono',monospace;color:#8d958f">15 OCT 16:31 PKT</span></div>
+<div style="margin:0 12px 12px;border:1px solid #5a4620;background:#231c0f;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:3px">
+<span style="font:700 10px 'JetBrains Mono',monospace;color:#e3a74a;letter-spacing:.06em">ALERT TRIGGERED</span>
+<span style="font:500 13px 'Space Grotesk',sans-serif">Petrol crossed Rs 390/L · now Rs 393.86 (+1.20)</span>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 44px 74px 62px;gap:6px;padding:6px 16px;font:500 10px 'JetBrains Mono',monospace;color:#6c746e;border-bottom:1px solid #262a28"><span>INDICATOR</span><span></span><span style="text-align:right">LAST</span><span style="text-align:right">CHG</span></div>
+<sc-for list="{{ bRows }}" as="r" hint-placeholder-count="12">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 44px 74px 62px;gap:6px;align-items:center;padding:0 16px;height:44px;border-bottom:1px solid #1e2221;background:{{ r.bBg }}">
+<div style="display:flex;align-items:center;gap:6px;min-width:0"><span style="width:4px;height:4px;border-radius:2px;background:{{ r.bBell }};flex:none"></span><span style="font:500 12px 'JetBrains Mono',monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.code }}</span></div>
+<svg width="44" height="16" style="display:block;overflow:visible"><path d="{{ r.spark44 }}" fill="none" stroke="{{ r.colB }}" style="stroke-width:1.3"></path></svg>
+<span style="font:500 12px 'JetBrains Mono',monospace;text-align:right;white-space:nowrap">{{ r.valShort }}</span>
+<span style="font:500 11px 'JetBrains Mono',monospace;text-align:right;color:{{ r.colB }};white-space:nowrap">{{ r.chgShort }}</span>
+</div>
+</sc-for>
+</div>
+<div style="height:58px;flex:none;border-top:1px solid #262a28;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;font:500 10px 'JetBrains Mono',monospace">
+<span style="text-align:center;color:#5fcf95">[ WATCH ]</span><span style="text-align:center;color:#6c746e">FX</span><span style="text-align:center;color:#6c746e">CAL</span><span style="text-align:center;color:#6c746e">CONV</span>
+</div>
+<div style="height:16px;flex:none;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#e6e9e6;opacity:.35"></span></div>
+</div>
+</div>
+
+<div style="width:360px;height:780px;border-radius:38px;background:#000;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(0,0,0,.25)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#111312;display:flex;flex-direction:column;color:#e6e9e6">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'Space Grotesk',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#000"></span><span style="font:500 11px 'JetBrains Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:8px 16px 16px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;height:40px"><span style="font:500 12px 'JetBrains Mono',monospace;color:#8d958f">← WATCH</span><span style="font:500 12px 'JetBrains Mono',monospace;color:#e3a74a">◆ ALERT</span></div>
+<div style="display:flex;flex-direction:column;gap:4px">
+<span style="font:500 12px 'JetBrains Mono',monospace;color:#8d958f">USD/PKR · INTERBANK</span>
+<span style="font:500 52px/1 'JetBrains Mono',monospace;letter-spacing:-.04em">277.15</span>
+<div style="display:flex;gap:14px;font:500 12px 'JetBrains Mono',monospace"><span style="color:#5fcf95">−0.01 · −0.00%</span><span style="color:#8d958f">CLOSE 14 OCT</span></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#262a28;border:1px solid #262a28;border-radius:10px;overflow:hidden">
+<div style="background:#161918;padding:10px 12px;display:flex;flex-direction:column;gap:2px"><span style="font:500 10px 'JetBrains Mono',monospace;color:#6c746e">BID</span><span style="font:500 15px 'JetBrains Mono',monospace">276.95</span></div>
+<div style="background:#161918;padding:10px 12px;display:flex;flex-direction:column;gap:2px"><span style="font:500 10px 'JetBrains Mono',monospace;color:#6c746e">OFFER</span><span style="font:500 15px 'JetBrains Mono',monospace">277.15</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<svg width="328" height="150" style="display:block;overflow:visible">
+<line x1="0" x2="328" y1="2" y2="2" stroke="#262a28"></line><line x1="0" x2="328" y1="75" y2="75" stroke="#262a28"></line><line x1="0" x2="328" y1="148" y2="148" stroke="#262a28"></line>
+<path d="{{ bArea }}" fill="#5fcf95" style="fill-opacity:.08"></path>
+<path d="{{ bLine }}" fill="none" stroke="#5fcf95" style="stroke-width:1.8;stroke-linejoin:round"></path>
+<text x="0" y="14" style="font:400 9px 'JetBrains Mono',monospace;fill:#6c746e">{{ bHiT }}</text>
+<text x="0" y="144" style="font:400 9px 'JetBrains Mono',monospace;fill:#6c746e">{{ bLoT }}</text>
+</svg>
+<div style="display:flex;gap:4px">
+<sc-for list="{{ bRangeTabs }}" as="t" hint-placeholder-count="3"><button onClick="{{ t.onClick }}" style="flex:1;height:32px;border:none;border-radius:6px;background:{{ t.bg }};color:{{ t.color }};font:500 11px 'JetBrains Mono',monospace;cursor:pointer">{{ t.label }}</button></sc-for>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px">
+<sc-for list="{{ bStats }}" as="s" hint-placeholder-count="3"><div style="border:1px solid #262a28;border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:3px"><span style="font:500 9px 'JetBrains Mono',monospace;color:#6c746e">{{ s.label }}</span><span style="font:500 13px 'JetBrains Mono',monospace">{{ s.value }}</span></div></sc-for>
+</div>
+<div style="display:flex;flex-direction:column;border-top:1px solid #262a28;font:400 12px 'Space Grotesk',sans-serif">
+<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #1e2221"><span style="color:#8d958f">Source</span><span>SBP / interbank close</span></div>
+<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #1e2221"><span style="color:#8d958f">Cross: EUR/USD · GBP/USD</span><span style="font-family:'JetBrains Mono',monospace">1.12 · 1.33</span></div>
+<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #1e2221"><span style="color:#8d958f">Alert</span><span style="color:#e3a74a;font-family:'JetBrains Mono',monospace">≥ 280.00</span></div>
+</div>
+</div>
+<div style="height:58px;flex:none;border-top:1px solid #262a28;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;font:500 10px 'JetBrains Mono',monospace">
+<span style="text-align:center;color:#6c746e">WATCH</span><span style="text-align:center;color:#5fcf95">[ FX ]</span><span style="text-align:center;color:#6c746e">CAL</span><span style="text-align:center;color:#6c746e">CONV</span>
+</div>
+<div style="height:16px;flex:none;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#e6e9e6;opacity:.35"></span></div>
+</div>
+</div>
+
+<div style="width:360px;height:780px;border-radius:38px;background:#000;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(0,0,0,.25)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#111312;display:flex;flex-direction:column;color:#e6e9e6">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'Space Grotesk',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#000"></span><span style="font:500 11px 'JetBrains Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:8px 16px 16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 22px 'Space Grotesk',sans-serif">Release calendar</span><span style="font:400 11px 'JetBrains Mono',monospace;color:#8d958f">PKT</span></div>
+<span style="font:400 11px/1.5 'Space Grotesk',sans-serif;color:#8d958f">Tap the bell to get a push when a figure lands. Dates marked EST follow each agency's usual schedule.</span>
+<sc-for list="{{ calRows }}" as="e" hint-placeholder-count="7">
+<div style="display:grid;grid-template-columns:48px minmax(0,1fr) 40px;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #1e2221;opacity:{{ e.op }}">
+<div style="display:flex;flex-direction:column;align-items:flex-start"><span style="font:500 10px 'JetBrains Mono',monospace;color:#8d958f">{{ e.wd }}</span><span style="font:600 20px/1.1 'Space Grotesk',sans-serif">{{ e.d }}</span><span style="font:500 10px 'JetBrains Mono',monospace;color:#8d958f">{{ e.m }}</span></div>
+<div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font:500 14px 'Space Grotesk',sans-serif">{{ e.t }}</span><div style="display:flex;gap:6px;font:500 10px 'JetBrains Mono',monospace"><span style="color:#5fcf95">{{ e.src }}</span><span style="color:#8d958f">{{ e.prev }}</span><span style="color:#e3a74a">{{ e.est }}</span></div></div>
+<button onClick="{{ e.onBell }}" style="width:40px;height:40px;border-radius:10px;border:1px solid {{ e.bellBorder }};background:{{ e.bellBg }};color:{{ e.bellColor }};font:500 13px 'JetBrains Mono',monospace;cursor:pointer">{{ e.bell }}</button>
+</div>
+</sc-for>
+</div>
+<div style="height:58px;flex:none;border-top:1px solid #262a28;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;font:500 10px 'JetBrains Mono',monospace">
+<span style="text-align:center;color:#6c746e">WATCH</span><span style="text-align:center;color:#6c746e">FX</span><span style="text-align:center;color:#5fcf95">[ CAL ]</span><span style="text-align:center;color:#6c746e">CONV</span>
+</div>
+<div style="height:16px;flex:none;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#e6e9e6;opacity:.35"></span></div>
+</div>
+</div>
+
+<div style="width:360px;height:780px;border-radius:38px;background:#000;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(0,0,0,.25)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#111312;display:flex;flex-direction:column;color:#e6e9e6">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'Space Grotesk',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#000"></span><span style="font:500 11px 'JetBrains Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:8px 16px 16px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:600 22px 'Space Grotesk',sans-serif">Converter</span><span style="font:400 11px 'JetBrains Mono',monospace;color:#8d958f">INTERBANK 14 OCT</span></div>
+<div style="border:1px solid #262a28;border-radius:14px;background:#161918;display:flex;flex-direction:column">
+<div style="padding:12px 14px;display:flex;flex-direction:column;gap:4px">
+<span style="font:500 10px 'JetBrains Mono',monospace;color:#6c746e">AMOUNT · {{ convFrom }}</span>
+<input value="{{ amt }}" onChange="{{ onAmt }}" inputmode="decimal" style="background:none;border:none;color:#e6e9e6;font:500 32px 'JetBrains Mono',monospace;letter-spacing:-.03em;width:100%;padding:0"></input>
+</div>
+<div style="display:flex;align-items:center;gap:8px;padding:0 14px 12px">
+<sc-for list="{{ amtChips }}" as="a" hint-placeholder-count="3"><button onClick="{{ a.onClick }}" style="height:28px;padding:0 10px;border-radius:6px;border:1px solid #262a28;background:#111312;color:#8d958f;font:500 11px 'JetBrains Mono',monospace;cursor:pointer">{{ a.label }}</button></sc-for>
+<button onClick="{{ swapConv }}" style="margin-left:auto;height:28px;padding:0 10px;border-radius:6px;border:none;background:#5fcf95;color:#0b1a12;font:700 11px 'JetBrains Mono',monospace;cursor:pointer">⇅ SWAP</button>
+</div>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ convRows }}" as="c" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid #1e2221">
+<span style="font:700 13px 'JetBrains Mono',monospace;color:#5fcf95">{{ c.code }}</span>
+<div style="display:flex;flex-direction:column;gap:1px"><span style="font:400 12px 'Space Grotesk',sans-serif">{{ c.name }}</span><span style="font:400 10px 'JetBrains Mono',monospace;color:#6c746e">{{ c.rate }}</span></div>
+<span style="font:500 16px 'JetBrains Mono',monospace">{{ c.out }}</span>
+</div>
+</sc-for>
+</div>
+<span style="font:400 11px/1.5 'Space Grotesk',sans-serif;color:#6c746e">Cross rates derived from interbank USD/PKR offer. SAR and AED use their USD pegs. Open-market and bank rates differ.</span>
+</div>
+<div style="height:58px;flex:none;border-top:1px solid #262a28;display:grid;grid-template-columns:repeat(4,1fr);align-items:center;font:500 10px 'JetBrains Mono',monospace">
+<span style="text-align:center;color:#6c746e">WATCH</span><span style="text-align:center;color:#6c746e">FX</span><span style="text-align:center;color:#6c746e">CAL</span><span style="text-align:center;color:#5fcf95">[ CONV ]</span>
+</div>
+<div style="height:16px;flex:none;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#e6e9e6;opacity:.35"></span></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Briefing: plain-language cards, tonal greens, bilingual labels</div>
+<div style="display:flex;gap:28px;flex-wrap:wrap">
+
+<div style="width:360px;height:780px;border-radius:38px;background:#121211;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(20,40,30,.14)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#f2f1ea;display:flex;flex-direction:column;color:#15241c">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'Bricolage Grotesque',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#121211"></span><span style="font:500 11px 'IBM Plex Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:6px 14px 16px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 4px 6px"><div style="display:flex;flex-direction:column"><span style="font:400 13px 'Bricolage Grotesque',sans-serif;color:#5a6a60">Thursday, 15 October</span><span style="font:700 26px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Today’s briefing</span></div><sc-if value="{{ showUrdu }}" hint-placeholder-val="{{ true }}"><span style="font:400 14px/2 'Noto Nastaliq Urdu',serif;color:#5a6a60">آج کی معیشت</span></sc-if></div>
+<div style="background:#123d2b;color:#eef5f0;border-radius:28px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<span style="font:500 11px 'IBM Plex Mono',monospace;color:#9fc7b1;letter-spacing:.06em">INFLATION · PBS</span>
+<span style="font:600 23px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.01em;text-wrap:pretty">Inflation eased to 10.3% in September, still above the SBP’s 5–7% target.</span>
+<svg width="292" height="44" style="display:block;overflow:visible"><path d="{{ cHeroSpark }}" fill="none" stroke="#9fe0bb" style="stroke-width:2;stroke-linejoin:round"></path></svg>
+<div style="display:flex;justify-content:space-between;font:400 12px 'Bricolage Grotesque',sans-serif;color:#9fc7b1"><span>Transport +27.4% led the rise</span><span>Aug 11.1%</span></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<sc-for list="{{ cTiles }}" as="t" hint-placeholder-count="4">
+<div style="background:{{ t.bg }};border-radius:24px;padding:14px;display:flex;flex-direction:column;gap:6px;min-height:118px;box-sizing:border-box">
+<span style="font:500 12px 'Bricolage Grotesque',sans-serif;color:#3e5247">{{ t.name }}</span>
+<sc-if value="{{ showUrdu }}" hint-placeholder-val="{{ true }}"><span style="font:400 10px/1.8 'Noto Nastaliq Urdu',serif;color:#5a6a60">{{ t.ur }}</span></sc-if>
+<span style="font:700 22px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-top:auto">{{ t.val }}</span>
+<span style="font:500 11px 'IBM Plex Mono',monospace;color:{{ t.col }}">{{ t.chg }}</span>
+</div>
+</sc-for>
+</div>
+<div style="background:#fff;border-radius:24px;padding:14px 16px;display:flex;flex-direction:column;gap:10px">
+<span style="font:600 15px 'Bricolage Grotesque',sans-serif">Your alerts</span>
+<div style="display:flex;flex-wrap:wrap;gap:6px">
+<span style="height:30px;display:flex;align-items:center;padding:0 12px;border-radius:15px;background:#f7e3c9;color:#6b3f0c;font:500 12px 'Bricolage Grotesque',sans-serif">Petrol ≥ Rs 390 · triggered</span>
+<span style="height:30px;display:flex;align-items:center;padding:0 12px;border-radius:15px;background:#e3efe7;font:500 12px 'Bricolage Grotesque',sans-serif">CPI ≥ 11%</span>
+<span style="height:30px;display:flex;align-items:center;padding:0 12px;border-radius:15px;background:#e3efe7;font:500 12px 'Bricolage Grotesque',sans-serif">Any MPC decision</span>
+<span style="height:30px;display:flex;align-items:center;padding:0 12px;border-radius:15px;border:1px dashed #9db3a5;font:500 12px 'Bricolage Grotesque',sans-serif;color:#3e5247">+ Add</span>
+</div>
+</div>
+</div>
+<div style="height:72px;flex:none;background:#e7ebe3;display:grid;grid-template-columns:repeat(4,1fr);align-items:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:56px;height:28px;border-radius:14px;background:#bfe0cb;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:5px;background:#123d2b"></span></span><span style="font:600 11px 'Bricolage Grotesque',sans-serif">Briefing</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#5a6a60"><span style="width:56px;height:28px;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:2px;border:1.5px solid #5a6a60"></span></span><span style="font:500 11px 'Bricolage Grotesque',sans-serif">Indicators</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#5a6a60"><span style="width:56px;height:28px;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:5px;border:1.5px solid #5a6a60"></span></span><span style="font:500 11px 'Bricolage Grotesque',sans-serif">News</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#5a6a60"><span style="width:56px;height:28px;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;transform:rotate(45deg);border:1.5px solid #5a6a60"></span></span><span style="font:500 11px 'Bricolage Grotesque',sans-serif">Alerts</span></div>
+</div>
+<div style="height:16px;flex:none;background:#e7ebe3;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#15241c;opacity:.3"></span></div>
+</div>
+</div>
+
+<div style="width:360px;height:780px;border-radius:38px;background:#121211;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(20,40,30,.14)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#f2f1ea;display:flex;flex-direction:column;color:#15241c">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'Bricolage Grotesque',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#121211"></span><span style="font:500 11px 'IBM Plex Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:6px 14px 16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:10px;height:44px"><span style="width:40px;height:40px;border-radius:20px;background:#e3efe7;display:flex;align-items:center;justify-content:center;font:500 18px sans-serif">←</span><span style="font:600 16px 'Bricolage Grotesque',sans-serif">Foreign exchange reserves</span></div>
+<div style="background:#fff;border-radius:28px;padding:18px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font:500 12px 'Bricolage Grotesque',sans-serif;color:#5a6a60">Held by SBP · week to 9 Oct</span><sc-if value="{{ showUrdu }}" hint-placeholder-val="{{ true }}"><span style="font:400 12px/2 'Noto Nastaliq Urdu',serif;color:#5a6a60">زرمبادلہ کے ذخائر</span></sc-if></div>
+<span style="font:700 46px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">$21.47bn</span>
+<span style="font:500 12px 'IBM Plex Mono',monospace;color:#1d6b47">+$16m w/w · about 3 months of imports</span>
+<svg width="292" height="130" style="display:block;overflow:visible">
+<path d="{{ cBars }}" fill="#bfe0cb"></path>
+<path d="{{ cBarLast }}" fill="#123d2b"></path>
+<line x1="0" x2="292" y1="130" y2="130" stroke="#d4dbd2"></line>
+</svg>
+<div style="display:flex;justify-content:space-between;font:400 10px 'IBM Plex Mono',monospace;color:#7a877f"><span>Oct 25</span><span>Mar</span><span>Oct 26</span></div>
+<span style="font:400 12px/1.45 'Bricolage Grotesque',sans-serif;color:#3e5247;text-wrap:pretty">The September jump followed a $3bn Eurobond. Reserves have held near $21.4bn for five weeks.</span>
+</div>
+<div style="background:#fff;border-radius:24px;padding:16px;display:flex;flex-direction:column;gap:10px">
+<span style="font:600 15px 'Bricolage Grotesque',sans-serif">Total liquid reserves $26.86bn</span>
+<div style="display:flex;height:14px;border-radius:7px;overflow:hidden;gap:2px"><span style="width:80%;background:#123d2b"></span><span style="width:20%;background:#9fd2b3"></span></div>
+<div style="display:flex;justify-content:space-between;font:400 12px 'Bricolage Grotesque',sans-serif"><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:4px;background:#123d2b"></span>SBP $21.47bn</span><span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:4px;background:#9fd2b3"></span>Banks $5.39bn</span></div>
+</div>
+<button onClick="{{ toggleCAlert }}" style="height:52px;border:none;border-radius:26px;background:{{ cAlertBg }};color:{{ cAlertColor }};font:600 15px 'Bricolage Grotesque',sans-serif;cursor:pointer">{{ cAlertLabel }}</button>
+</div>
+<div style="height:16px;flex:none;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#15241c;opacity:.3"></span></div>
+</div>
+</div>
+
+<div style="width:360px;height:780px;border-radius:38px;background:#121211;padding:7px;box-sizing:border-box;box-shadow:0 20px 40px rgba(20,40,30,.14)">
+<div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#f2f1ea;display:flex;flex-direction:column;color:#15241c">
+<div style="height:30px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font:500 12px 'Bricolage Grotesque',sans-serif"><span>9:41</span><span style="width:11px;height:11px;border-radius:50%;background:#121211"></span><span style="font:500 11px 'IBM Plex Mono',monospace">5G 82%</span></div>
+<div style="flex:1;overflow-y:auto;padding:6px 14px 16px;display:flex;flex-direction:column;gap:10px">
+<span style="font:700 26px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;padding:4px 4px 2px">News &amp; announcements</span>
+<div style="display:flex;gap:6px;overflow-x:auto;padding:2px 0 4px">
+<sc-for list="{{ newsChips }}" as="c" hint-placeholder-count="4"><button onClick="{{ c.onClick }}" style="flex:none;height:34px;padding:0 14px;border-radius:17px;border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.color }};font:500 13px 'Bricolage Grotesque',sans-serif;cursor:pointer">{{ c.label }}</button></sc-for>
+</div>
+<sc-for list="{{ newsRows }}" as="n" hint-placeholder-count="5">
+<div style="background:{{ n.bg }};border-radius:22px;padding:14px 16px;display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;justify-content:space-between;gap:8px"><span style="font:500 11px 'IBM Plex Mono',monospace;color:{{ n.srcColor }}">{{ n.src }}</span><span style="font:400 11px 'IBM Plex Mono',monospace;color:#7a877f">{{ n.date }}</span></div>
+<span style="font:600 15px/1.3 'Bricolage Grotesque',sans-serif;text-wrap:pretty">{{ n.t }}</span>
+<span style="align-self:flex-start;height:24px;display:flex;align-items:center;padding:0 10px;border-radius:12px;background:#e3efe7;font:500 11px 'Bricolage Grotesque',sans-serif;color:#3e5247">{{ n.tag }}</span>
+</div>
+</sc-for>
+</div>
+<div style="height:72px;flex:none;background:#e7ebe3;display:grid;grid-template-columns:repeat(4,1fr);align-items:center">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#5a6a60"><span style="width:56px;height:28px;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:5px;background:#5a6a60"></span></span><span style="font:500 11px 'Bricolage Grotesque',sans-serif">Briefing</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#5a6a60"><span style="width:56px;height:28px;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:2px;border:1.5px solid #5a6a60"></span></span><span style="font:500 11px 'Bricolage Grotesque',sans-serif">Indicators</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:56px;height:28px;border-radius:14px;background:#bfe0cb;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;border-radius:5px;border:1.5px solid #123d2b"></span></span><span style="font:600 11px 'Bricolage Grotesque',sans-serif">News</span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#5a6a60"><span style="width:56px;height:28px;display:flex;align-items:center;justify-content:center"><span style="width:10px;height:10px;transform:rotate(45deg);border:1.5px solid #5a6a60"></span></span><span style="font:500 11px 'Bricolage Grotesque',sans-serif">Alerts</span></div>
+</div>
+<div style="height:16px;flex:none;background:#e7ebe3;display:flex;justify-content:center;align-items:center"><span style="width:100px;height:4px;border-radius:2px;background:#15241c;opacity:.3"></span></div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "take <a class="dv-oid" href="#1a">1a</a> to a full clickable prototype" · "<a class="dv-oid" href="#1c">1c</a> cards with the density of <a class="dv-oid" href="#1b">1b</a>" · "dark mode for <a class="dv-oid" href="#1a">1a</a>"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showUrdu&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;semanticColor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;label&quot;:&quot;Color changes by good/bad for economy&quot;}}">
+class Component extends DCLogic {
+  state = { aFilter: 'all', stars: { cpi: 1, policy: 1, pkr: 1, reserves: 1, petrol: 1 }, aRange: 12, thr: 11, aAlert: true,
+    cmp: { petrol: 1, kse: 1, gold: 0, pkr: 0, remit: 0, reserves: 0 }, bRange: 12, bell: { cpi: 1, mpc: 1 }, amt: '100000', toPkr: false, cFilter: 'All', cAlert: false };
+
+  IND = [
+    { id: 'cpi', name: 'CPI inflation', code: 'CPI YOY', val: '10.3%', valShort: '10.3%', chg: '−0.8 pp vs Aug', chgShort: '−0.8pp', per: 'Sep 2026 · PBS', g: 1, s: [6.2,6.1,5.6,5.8,7.0,7.3,10.4,10.9,10.6,9.2,11.1,10.3] },
+    { id: 'policy', name: 'SBP policy rate', code: 'POLICY', val: '11.50%', valShort: '11.50%', chg: 'Hold', chgShort: 'HOLD', per: 'MPC 14 Sep · 7 of 10', g: 0, s: [11,11,10.5,10.5,10.5,10.5,11.5,11.5,11.5,11.5,11.5,11.5] },
+    { id: 'pkr', name: 'USD/PKR', code: 'USD/PKR', val: '277.15', valShort: '277.15', chg: '−0.01', chgShort: '−0.01', per: 'Interbank · 14 Oct', g: 1, s: [281.0,280.7,280.3,279.9,279.6,279.4,279.1,278.7,278.3,277.9,277.4,277.15] },
+    { id: 'reserves', name: 'SBP reserves', code: 'FX RES', val: '$21.47bn', valShort: '21.47bn', chg: '+$16m', chgShort: '+16m', per: 'Week to 9 Oct', g: 1, s: [14.5,14.6,15.9,16.1,16.2,16.0,15.8,16.1,18.4,17.0,17.1,21.47] },
+    { id: 'kse', name: 'KSE-100', code: 'KSE-100', val: '166,186', valShort: '166,186', chg: '+0.46%', chgShort: '+0.46%', per: 'Close 15 Oct · PSX', g: 1, s: [160.1,163.4,170.2,172.8,165.0,152.0,158.3,162.5,170.1,175.2,169.0,166.2] },
+    { id: 'ca', name: 'Current account', code: 'CUR ACCT', val: '−$543m', valShort: '−543m', chg: 'vs −$853m', chgShort: 'NARROW', per: 'Jul–Aug FY27', g: 1, s: [-0.1,0.05,-0.25,-0.4,-0.3,-0.6,-0.7,-0.5,0.3,-0.25,-0.29,-0.25] },
+    { id: 'remit', name: 'Remittances', code: 'REMIT', val: '$3.59bn', valShort: '3.59bn', chg: '+12.7% y/y', chgShort: '+12.7%', per: 'Sep 2026 · SBP', g: 1, s: [3.4,3.2,3.6,3.5,3.3,3.8,3.9,3.7,3.6,3.63,3.66,3.59] },
+    { id: 'petrol', name: 'Petrol', code: 'PETROL/L', val: 'Rs 393.86', valShort: '393.86', chg: '+1.20', chgShort: '+1.20', per: 'Per litre · from 15 Oct', g: -1, s: [265,263,262,260,268,330,355,372,380,384,392.66,393.86] },
+    { id: 'gold', name: 'Gold 24K', code: 'GOLD/TOLA', val: 'Rs 437,836', valShort: '437,836', chg: '−3,000', chgShort: '−3,000', per: 'Per tola · Sarafa', g: 0, s: [400,410,425,430,440,455,450,445,440,442,435,437.8] },
+    { id: 'trade', name: 'Trade balance', code: 'TRADE G&S', val: '−$6.75bn', valShort: '−6.75bn', chg: 'Jul–Aug', chgShort: '2M', per: 'Goods & services', g: 0, s: [-2.3,-2.4,-2.6,-2.9,-2.7,-3.1,-3.3,-3.0,-3.2,-3.4,-3.3,-3.45] },
+    { id: 'gdp', name: 'GDP growth', code: 'GDP FY27', val: '3.5%', valShort: '3.5%', chg: 'proj.', chgShort: 'PROJ', per: 'FY27 · S&P Global', g: 0, s: [1.7,2.4,3.1,3.6,3.9,3.2,2.9,3.5] },
+    { id: 'unemp', name: 'Unemployment', code: 'UNEMP', val: '7.1%', valShort: '7.1%', chg: 'LFS', chgShort: 'LFS', per: 'Labour Force Survey 24–25', g: 0, s: [6.3,6.9,7.1] }
+  ];
+  UR = { cpi: 'افراطِ زر', policy: 'پالیسی ریٹ', pkr: 'ڈالر / روپیہ', reserves: 'زرمبادلہ کے ذخائر', kse: 'کے ایس ای ۱۰۰' };
+  MON = ['Oct 25','Nov 25','Dec 25','Jan 26','Feb 26','Mar 26','Apr 26','May 26','Jun 26','Jul 26','Aug 26','Sep 26'];
+
+  path(s, w, h, pad, mn, mx) {
+    pad = pad ?? 2; mn = mn ?? Math.min(...s); mx = mx ?? Math.max(...s); const r = (mx - mn) || 1;
+    return s.map((v, i) => (i ? 'L' : 'M') + (i * w / (s.length - 1)).toFixed(1) + ' ' + (pad + (h - 2 * pad) * (1 - (v - mn) / r)).toFixed(1)).join(' ');
+  }
+  rangeTabs(cur, key, dark) {
+    return [3, 6, 12].map(n => {
+      const on = cur === n, label = n === 12 ? '1Y' : n + 'M';
+      return dark ? { label, bg: on ? '#5fcf95' : '#1c201e', color: on ? '#0b1a12' : '#8d958f', onClick: () => this.setState({ [key]: n }) }
+        : { label, bg: on ? '#1c1b18' : 'transparent', color: on ? '#f6f4ef' : '#1c1b18', border: on ? '#1c1b18' : '#c9c3b6', onClick: () => this.setState({ [key]: n }) };
+    });
+  }
+
+  renderVals() {
+    const st = this.state, sem = this.props.semanticColor ?? true, showUrdu = this.props.showUrdu ?? true;
+    const pal = { a: ['#a5432f', '#6b675e', '#1f6b4f'], b: ['#ef7a6a', '#9aa19c', '#5fcf95'], c: ['#b0412c', '#5d5a52', '#1d6b47'] };
+    const col = (k, g) => sem ? pal[k][g + 1] : pal[k][1];
+    const toggleStar = id => this.setState(s => ({ stars: { ...s.stars, [id]: s.stars[id] ? 0 : 1 } }));
+    const rows = this.IND.map(d => ({ ...d,
+      colA: col('a', d.g), colB: col('b', d.g),
+      spark54: this.path(d.s, 54, 20), spark44: this.path(d.s, 44, 16),
+      star: st.stars[d.id] ? '★' : '☆', starColA: st.stars[d.id] ? '#1f6b4f' : '#b5afa2', onStar: () => toggleStar(d.id),
+      bBg: d.id === 'petrol' ? '#1d1810' : 'transparent', bBell: d.id === 'petrol' ? '#e3a74a' : (st.stars[d.id] ? '#5fcf95' : 'transparent') }));
+    const nStar = Object.values(st.stars).filter(Boolean).length;
+    const aRows = st.aFilter === 'star' ? rows.filter(r => st.stars[r.id]) : rows;
+    const aTabs = [['all', 'All 12'], ['star', 'Starred ' + nStar]].map(([k, l]) => ({ label: l, bg: st.aFilter === k ? '#fffdf8' : 'transparent', shadow: st.aFilter === k ? '0 1px 2px rgba(0,0,0,.12)' : 'none', onClick: () => this.setState({ aFilter: k }) }));
+
+    const cpi = this.IND[0].s.slice(-st.aRange);
+    const yc = v => 4 + 152 * (1 - v / 12);
+    const aLine = this.path(cpi, 324, 160, 4, 0, 12);
+    const cpiGroups = [['Transport', 27.4], ['Communication', 13.5], ['Housing & utilities', 12.4], ['Food', 8.2], ['Health', 7.9]]
+      .map(([n, v]) => ({ name: n, v: v.toFixed(1) + '%', w: (v / 30 * 100) + '%', color: v > 10 ? '#a5432f' : '#6b675e' }));
+
+    const cmpIds = ['petrol', 'kse', 'gold', 'pkr', 'remit', 'reserves'], cmpCols = ['#a5432f', '#1f6b4f', '#a07a1f', '#2f5d8a', '#6d4a7a', '#1c1b18'];
+    const idx = id => { const s = this.IND.find(d => d.id === id).s; return s.map(v => v / s[0] * 100); };
+    const sel = cmpIds.filter(id => st.cmp[id]);
+    const all = sel.flatMap(idx).concat([100]); const mn = Math.min(...all) - 2, mx = Math.max(...all) + 2;
+    const cmpPaths = {}; cmpIds.forEach((id, i) => { cmpPaths['cmp' + i] = this.path(idx(id), 324, 196, 4, mn, mx); cmpPaths['cmpO' + i] = st.cmp[id] ? 1 : 0; });
+    const baseY = 4 + 188 * (1 - (100 - mn) / (mx - mn));
+    const cmpChips = cmpIds.map((id, i) => { const on = !!st.cmp[id]; return { name: this.IND.find(d => d.id === id).name, dot: cmpCols[i], bg: on ? '#1c1b18' : 'transparent', color: on ? '#f6f4ef' : '#1c1b18', border: on ? '#1c1b18' : '#c9c3b6',
+      onClick: () => this.setState(s => ({ cmp: { ...s.cmp, [id]: s.cmp[id] ? 0 : 1 } })) }; });
+    const cmpLegend = sel.map(id => { const v = idx(id).slice(-1)[0]; return { name: this.IND.find(d => d.id === id).name, dot: cmpCols[cmpIds.indexOf(id)], idx: v.toFixed(1), pct: (v >= 100 ? '+' : '−') + Math.abs(v - 100).toFixed(1) + '%' }; });
+    const top = cmpLegend.slice().sort((a, b) => b.idx - a.idx)[0];
+    const cmpNote = sel.length ? top.name + ' moved most over the year, ' + top.pct + ' since October 2025.' : 'Pick indicators above to compare them on one scale.';
+
+    const pk = this.IND[2].s.slice(-st.bRange), pkLine = this.path(pk, 328, 150, 6);
+    const hi = Math.max(...pk), lo = Math.min(...pk);
+    const amtNum = parseFloat(String(st.amt).replace(/,/g, '')) || 0;
+    const fx = [['USD', 'US dollar', 277.15], ['EUR', 'Euro', 277.15 * 1.12], ['GBP', 'Pound sterling', 277.15 * 1.33], ['SAR', 'Saudi riyal', 277.15 / 3.75], ['AED', 'UAE dirham', 277.15 / 3.6725]];
+    const nf = (v, d) => v.toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
+    const convRows = fx.map(([c, n, r]) => ({ code: c, name: n, rate: '1 ' + c + ' = Rs ' + nf(r, 2), out: st.toPkr ? 'Rs ' + nf(amtNum * r, 0) : nf(amtNum / r, 2) }));
+
+    const cal = [
+      { k: 'res0', wd: 'THU', d: '15', m: 'OCT', t: 'SBP weekly FX reserves', src: 'SBP', prev: 'Released · $21.47bn', est: '', done: 1 },
+      { k: 'ca', wd: 'MON', d: '19', m: 'OCT', t: 'Current account, September', src: 'SBP', prev: 'Prev Jul–Aug −$543m', est: 'EST' },
+      { k: 'res1', wd: 'THU', d: '22', m: 'OCT', t: 'SBP weekly FX reserves', src: 'SBP', prev: 'Prev $21.47bn', est: '' },
+      { k: 'mpc', wd: 'MON', d: '26', m: 'OCT', t: 'Monetary Policy Committee', src: 'SBP', prev: 'Prev hold 11.50%', est: 'EST' },
+      { k: 'fuel', wd: 'SAT', d: '31', m: 'OCT', t: 'Petroleum price review', src: 'OGRA', prev: 'Prev Rs 393.86', est: 'EST' },
+      { k: 'cpi', wd: 'MON', d: '02', m: 'NOV', t: 'CPI inflation, October', src: 'PBS', prev: 'Prev 10.3%', est: 'EST' },
+      { k: 'remit', wd: 'MON', d: '09', m: 'NOV', t: 'Workers’ remittances, October', src: 'SBP', prev: 'Prev $3.59bn', est: 'EST' }
+    ];
+    const calRows = cal.map(e => { const on = !!st.bell[e.k]; return { ...e, op: e.done ? .5 : 1, bell: e.done ? '✓' : (on ? 'ON' : '+'),
+      bellBg: on ? '#5fcf95' : 'transparent', bellColor: on ? '#0b1a12' : '#8d958f', bellBorder: on ? '#5fcf95' : '#262a28',
+      onBell: () => !e.done && this.setState(s => ({ bell: { ...s.bell, [e.k]: s.bell[e.k] ? 0 : 1 } })) }; });
+
+    const tileIds = [['policy', '#e3efe7'], ['pkr', '#fff'], ['kse', '#fff'], ['remit', '#e3efe7']];
+    const cTiles = tileIds.map(([id, bg]) => { const d = this.IND.find(x => x.id === id); return { name: d.name, ur: this.UR[id] || 'ترسیلاتِ زر', val: d.val, chg: d.chg + ' · ' + d.per.split(' · ')[0], col: col('c', d.g), bg }; });
+    const res = this.IND[3].s, rmx = 22, bw = 292 / 12;
+    const bar = (v, i) => { const h = v / rmx * 126; return 'M' + (i * bw + 2).toFixed(1) + ' ' + (130 - h).toFixed(1) + 'h' + (bw - 4).toFixed(1) + 'V130H' + (i * bw + 2).toFixed(1) + 'Z'; };
+    const news = [
+      { src: 'SBP', date: '15 Oct', t: 'SBP-held reserves rise $16m to $21.47bn in week to 9 October', tag: 'FX reserves' },
+      { src: 'PSX', date: '15 Oct', t: 'KSE-100 closes 768 points higher at 166,186 on bank and energy buying', tag: 'KSE-100', cat: 'Markets' },
+      { src: 'OGRA', date: '15 Oct', t: 'Petrol raised Rs1.20 to Rs393.86 a litre; diesel trimmed Re0.17', tag: 'Fuel prices', cat: 'Markets' },
+      { src: 'SBP', date: '9 Oct', t: 'Workers’ remittances reach $3.59bn in September, up 12.7% year on year', tag: 'Remittances' },
+      { src: 'PBS', date: '1 Oct', t: 'CPI inflation eases to 10.3% in September from 11.1% in August', tag: 'Inflation' },
+      { src: 'SBP', date: '14 Sep', t: 'MPC keeps policy rate at 11.5% by a 7–3 majority, citing Middle East risks', tag: 'Policy rate' }
+    ].map(n => ({ ...n, cat: n.cat || n.src, bg: n.src === 'SBP' ? '#fff' : '#fbfaf6', srcColor: n.src === 'SBP' ? '#1d6b47' : '#5d5a52' }));
+    const newsChips = ['All', 'SBP', 'PBS', 'Markets'].map(l => { const on = st.cFilter === l; return { label: l, bg: on ? '#123d2b' : 'transparent', color: on ? '#eef5f0' : '#15241c', border: on ? '#123d2b' : '#c8d2c9', onClick: () => this.setState({ cFilter: l }) }; });
+
+    return {
+      showUrdu, aRows, aTabs, aAlertCount: (st.aAlert ? 1 : 0) + 2,
+      aLine, aLastY: yc(cpi[cpi.length - 1]).toFixed(1), aX0: this.MON[12 - st.aRange], aRangeTabs: this.rangeTabs(st.aRange, 'aRange'),
+      cpiGroups, thrText: st.thr.toFixed(1) + '%',
+      thrUp: () => this.setState(s => ({ thr: Math.min(20, +(s.thr + 0.5).toFixed(1)) })),
+      thrDown: () => this.setState(s => ({ thr: Math.max(0, +(s.thr - 0.5).toFixed(1)) })),
+      aAlertText: st.aAlert ? 'Push + email · ' + (10.3 >= st.thr ? 'already above' : (st.thr - 10.3).toFixed(1) + ' pp away') : 'Off',
+      toggleAAlert: () => this.setState(s => ({ aAlert: !s.aAlert })), aSwBg: st.aAlert ? '#1f6b4f' : '#c9c3b6', aSwX: st.aAlert ? '19px' : '3px',
+      ...cmpPaths, cmpChips, cmpLegend, cmpNote, cmpBaseY: baseY.toFixed(1), cmpBaseLabelY: (baseY - 4).toFixed(1),
+      bRows: rows, bLine: pkLine, bArea: pkLine + ' L328 150 L0 150 Z', bHiT: hi.toFixed(2), bLoT: lo.toFixed(2),
+      bRangeTabs: this.rangeTabs(st.bRange, 'bRange', true),
+      bStats: [{ label: 'HIGH', value: hi.toFixed(2) }, { label: 'LOW', value: lo.toFixed(2) }, { label: 'CHG', value: ((pk[pk.length - 1] / pk[0] - 1) * 100).toFixed(2) + '%' }],
+      calRows, amt: st.amt, onAmt: e => this.setState({ amt: e.target.value }), convFrom: st.toPkr ? 'FOREIGN → PKR' : 'PKR',
+      swapConv: () => this.setState(s => ({ toPkr: !s.toPkr, amt: s.toPkr ? '100000' : '1000' })),
+      amtChips: (st.toPkr ? ['100', '1000', '5000'] : ['10000', '100000', '1000000']).map(v => ({ label: Number(v).toLocaleString('en-US'), onClick: () => this.setState({ amt: v }) })),
+      convRows,
+      cHeroSpark: this.path(this.IND[0].s, 292, 44, 3), cTiles,
+      cBars: res.slice(0, -1).map(bar).join(' '), cBarLast: bar(res[11], 11),
+      cAlertBg: st.cAlert ? '#e3efe7' : '#123d2b', cAlertColor: st.cAlert ? '#123d2b' : '#eef5f0', cAlertLabel: st.cAlert ? '✓ Alert set · reserves below $20bn' : 'Alert me if reserves fall below $20bn',
+      toggleCAlert: () => this.setState(s => ({ cAlert: !s.cAlert })),
+      newsChips, newsRows: st.cFilter === 'All' ? news : news.filter(n => n.cat === st.cFilter)
+    };
+  }
+}
+</script>
+</body>
+</html>

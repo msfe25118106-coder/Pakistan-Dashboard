@@ -1,0 +1,27 @@
+[
+{
+"country": "Saudi Arabia",
+"usd_mn": 899.13,
+"yoy_pct": 19.73
+},
+{
+"country": "UAE",
+"usd_mn": 748.53,
+"yoy_pct": 10.0
+},
+{
+"country": "UK",
+"usd_mn": 515.15,
+"yoy_pct": 13.3
+},
+{
+"country": "EU",
+"usd_mn": 447.71,
+"yoy_pct": null
+},
+{
+"country": "USA",
+"usd_mn": 305.87,
+"yoy_pct": 13.7
+}
+]

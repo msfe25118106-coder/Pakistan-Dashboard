@@ -1,0 +1,37 @@
+[
+{
+"date": "2025-09-15",
+"rate": 11.0,
+"decision": "Hold"
+},
+{
+"date": "2025-10-27",
+"rate": 11.0,
+"decision": "Hold"
+},
+{
+"date": "2025-12-15",
+"rate": 10.5,
+"decision": "Cut 50 bp"
+},
+{
+"date": "2026-03-09",
+"rate": 10.5,
+"decision": "Hold"
+},
+{
+"date": "2026-04-28",
+"rate": 11.5,
+"decision": "Hike 100 bp"
+},
+{
+"date": "2026-07-27",
+"rate": 11.5,
+"decision": "Hold"
+},
+{
+"date": "2026-09-14",
+"rate": 11.5,
+"decision": "Hold (7\u20133 vote)"
+}
+]
